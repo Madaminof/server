@@ -1,0 +1,16 @@
+/* Style for the heading */
+.hash1 {
+    color: blue; /* Change the color to your preference */
+    font-family: Arial, sans-serif; /* Change the font family if needed */
+}
+
+/* Style for the links */
+a {
+    color: black; /* Change the color to your preference */
+    text-decoration: none; /* Remove underline from links */
+}
+
+/* Style for the links on hover */
+a:hover {
+    color: darkblue; /* Change the color to your preference */
+}

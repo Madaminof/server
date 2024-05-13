@@ -2,18 +2,76 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Register</title>
-    <link rel="stylesheet" href="index.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Authorization</title>
+    <style>
+        /* Reset default browser styles */
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+        }
+
+        /* Container for the content */
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Authorization section */
+        .authorization-section {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .authorization-section h1 {
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        /* Links */
+        .authorization-links {
+            display: flex;
+            justify-content: center;
+        }
+
+        .authorization-links a {
+            display: inline-block;
+            margin: 0 10px;
+            padding: 10px 20px;
+            text-decoration: none;
+            color: #fff;
+            background-color: #007bff;
+            border-radius: 5px;
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        .authorization-links a:hover {
+            background-color: #0056b3;
+        }
+    </style>
 </head>
 <body>
-<h1 class="hash1">Autorization</h1><hr/>
-<a  href="{% url 'app1:register' %}" >Register</a><br/><br/>
+    <div class="container">
+        <div class="authorization-section">
+            <h1>Authorization</h1>
+        </div>
 
-{% if request.user.is_authenticated %}
+        <div class="authorization-links">
+            <a href="{% url 'app1:register' %}">Register</a>
+            {% if request.user.is_authenticated %}
     <a href="{% url 'products:bookview'  %}">Books</a><br><br>
 
 {% else %}
     <a href="{% url 'app1:login' %}">Login</a>
 {% endif %}
+    
+        </div>
+    </div>
 </body>
 </html>

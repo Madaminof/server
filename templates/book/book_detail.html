@@ -3,25 +3,88 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Book Details</title>
+    <style>
+        /* Reset default browser styles */
+        body, h1, h4, img, hr {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            background-color: #f4f4f4;
+            color: #333;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        img {
+            display: block;
+            margin: 0 auto;
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        hr {
+            border: none;
+            border-top: 1px solid #ccc;
+            margin: 20px 0;
+        }
+
+        h4 {
+            margin: 10px 0;
+            font-size: 18px;
+        }
+
+        a {
+            color: #007bff;
+            text-decoration: none;
+            transition: color 0.3s ease-in-out;
+        }
+
+        a:hover {
+            color: #0056b3;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .actions {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .actions a {
+            margin-right: 10px;
+        }
+    </style>
 </head>
 <body>
-    <h1>Details</h1><hr>
-
-    <img src="{{ object.image.url}}" height="200"><hr>
-    <h4>Book Name: {{ object.name }} </h4><hr>
-    <h4>Description: {{ object.description }} </h4><hr>
-    <h4>Book Page: {{ object.page }} </h4><hr>
-    <h4>Price: {{ object.price }} </h4><hr>
-    <h4>Author: {{ object.author.first_name }} </h4><hr>
-    
-    
+    <div class="container">
+        <h1>Book Details</h1>
+        <img src="{{ object.image.url }}" alt="Book Image">
+        <hr>
+        <h4>Book Name: {{ object.name }}</h4>
+        <h4>Description: {{ object.description }}</h4>
+        <h4>Book Page: {{ object.page }}</h4>
+        <h4>Price: {{ object.price }}</h4>
+        <h4>Author: {{ object.author.first_name }}</h4>
+        <div class="actions">
+            <a href="{% url 'products:savat' object.pk %}">Add to Cart</a>
+            <a href="{% url 'products:bookview' %}">Go Back</a>
+            <a href="{% url 'products:update' object.pk %}">Update</a>
+        </div>
+    </div>
 </body>
-<a href="{% url 'products:savat' object.pk%}"> Savat </a><br>
-<a href="{%url 'products:bookview' %}">Orqaga</a>
-
-<hr>
-<a href="{%url 'products:update' object.pk%}">Update</a>
-
-
 </html>

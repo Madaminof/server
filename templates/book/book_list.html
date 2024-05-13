@@ -2,21 +2,74 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Books</title>
+    <style>
+        /* Reset default browser styles */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Container for the content */
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Heading */
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        /* Book links */
+        .book-link {
+            display: block;
+            padding: 10px;
+            margin-bottom: 10px;
+            background-color: #007bff;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        .book-link:hover {
+            background-color: #0056b3;
+        }
+
+        /* Logout link */
+        .logout-link {
+            display: block;
+            text-align: center;
+            margin-top: 20px;
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        .logout-link:hover {
+            text-decoration: underline;
+        }
+    </style>
 </head>
 <body>
-<h1>Book List</h1>
+    <div class="container">
+        <h1>Book List</h1>
 
-{% for i in book %}
+        {% for book in book %}
+            <a class="book-link" href="{% url 'products:detail' book.pk %}">{{ book.name }}</a>
+        {% endfor %}
 
-  <a href="{% url 'products:detail' i.pk %}" >{{ i.name }}</a><br>
-
-
-{% endfor %}
-
-
-<hr>
-<a href="{% url 'app1:logout' %}">LogOut</a>
-
+        <hr>
+        <a class="logout-link" href="{% url 'app1:logout' %}">Log Out</a>
+    </div>
 </body>
 </html>
