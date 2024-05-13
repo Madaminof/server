@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Register</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+<h1 class="hash1">Autorization</h1><hr/>
+<a  href="{% url 'app1:register' %}" >Register</a><br/><br/>
+
+{% if request.user.is_authenticated %}
+    <a href="{% url 'products:bookview'  %}">Books</a><br><br>
+
+{% else %}
+    <a href="{% url 'app1:login' %}">Login</a>
+{% endif %}
+</body>
+</html>

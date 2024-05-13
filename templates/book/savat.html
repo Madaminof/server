@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sotuv Bo'limi</title>
+</head>
+<body>
+    <h1 style="text-align: center;"> Sotib Olish </h1>
+    <img src="{{object.image.url}}" ><hr>
+    <h2>Book Name: {{ object.name }}</h2>
+    <h2>Price: {{ object.price }}</h2>
+
+</body>
+<a href="{%url 'products:detail' object.pk%}">Orqaga</a>
+</html>

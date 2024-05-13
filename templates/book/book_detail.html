@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Details</h1><hr>
+
+    <img src="{{ object.image.url}}" height="200"><hr>
+    <h4>Book Name: {{ object.name }} </h4><hr>
+    <h4>Description: {{ object.description }} </h4><hr>
+    <h4>Book Page: {{ object.page }} </h4><hr>
+    <h4>Price: {{ object.price }} </h4><hr>
+    <h4>Author: {{ object.author.first_name }} </h4><hr>
+    
+    
+</body>
+<a href="{% url 'products:savat' object.pk%}"> Savat </a><br>
+<a href="{%url 'products:bookview' %}">Orqaga</a>
+
+<hr>
+<a href="{%url 'products:update' object.pk%}">Update</a>
+
+
+</html>
