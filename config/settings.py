@@ -76,19 +76,19 @@ WSGI_APPLICATION = 'config.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'najottalim',
-        'HOST':'localhost',
+        'HOST': '127.0.0.1',  # IPv4 manzilini ishlatish
         'PASSWORD': 'Samandar2004',
-        "PORT": "5432",
-        "USER": "postgres"
-
-
-      
+        'PORT': '5432',
+        'USER': 'postgres'
     }
 }
+
+
 
 
 # Password validation
