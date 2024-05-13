@@ -75,20 +75,17 @@ WSGI_APPLICATION = 'config.wsgi.application'
     
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
-
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'najottalim',
-        'HOST':'localhost',
+        'NAME': 'lesson3',
+        'HOST': 'localhost',
         'PASSWORD': 'Samandar2004',
-        "PORT": "27.0.0.1",
-        "USER": "postgres"
-
-
-      
+        'PORT': '5432',  # Port raqamini to'g'ri yozing
+        'USER': 'postgres'
     }
 }
+
 
 
 # Password validation
